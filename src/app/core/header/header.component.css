@@ -1,0 +1,28 @@
+#banner{
+  background-color: #AD2344;
+  height: 115px;
+}
+
+.container-banner{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  border-bottom: 3px dashed rgba(244, 210, 121, 0.1);
+}
+.logo{
+  padding-top: 15px;
+}
+
+.instituicao{
+  padding-top: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: #F4D279;
+}
+
+.menu-usuario{
+  padding-top: 25px;
+}

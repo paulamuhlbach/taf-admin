@@ -1,0 +1,29 @@
+#menu-principal ul {
+  background-color:#801932;
+  list-style:none;
+  display: inline-block;
+  width: 100%;
+
+}
+
+#menu-principal ul li {
+  display: inline;
+}
+
+#menu-principal ul li a {
+  margin-left: 5%;
+  padding-left: 5%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 30px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#menu-principal ul li a:hover {
+
+  color: #FAE5B0;
+}
+
