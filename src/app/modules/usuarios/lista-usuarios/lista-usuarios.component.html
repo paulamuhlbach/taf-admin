@@ -1,0 +1,9 @@
+<div *ngFor="let contentUser of contentUsers">
+  <p>{{contentUser.userProfile.primeiroNome}} {{contentUser.userProfile.sobrenome}}</p>
+  <p>{{contentUser.contentUserRole.description}} {{contentUser.contentUserRole.active}}</p>
+</div>
+
+<app-lista-perfis-usuarios></app-lista-perfis-usuarios>
+
+<p>Roles de Usuário:</p>
+<app-lista-roles></app-lista-roles>
