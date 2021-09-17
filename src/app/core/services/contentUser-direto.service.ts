@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { Imagem } from '../models';
+import { ContentUser } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class ImagemService {
+export class ContentUserService {
 
-  url = 'https://portal-taf.herokuapp.com/api/userProfile/imagem/files';
-  urlPost = 'https://portal-taf.herokuapp.com/api/userProfile/imagem/upload';
+  url = 'https://portal-taf.herokuapp.com/api/contentUsers';
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -20,44 +19,44 @@ export class ImagemService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
-  // Obtem todos os Imagems
-  getImagems(): Observable<Imagem[]> {
-    return this.httpClient.get<Imagem[]>(this.url)
+  // Obtem todos os ContentUsers
+  getContentUsers(): Observable<ContentUser[]> {
+    return this.httpClient.get<ContentUser[]>(this.url)
       .pipe(
         retry(2),
         catchError(this.handleError))
   }
 
-  // Obtem um Imagem pelo id
-  getImagemById(id: number): Observable<Imagem> {
-    return this.httpClient.get<Imagem>(this.url + '/' + id)
+  // Obtem um ContentUser pelo id
+  getContentUserById(id: number): Observable<ContentUser> {
+    return this.httpClient.get<ContentUser>(this.url + '/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  // salva um Imagem
-  saveImagem(Imagem: Imagem): Observable<Imagem> {
-    return this.httpClient.post<Imagem>(this.urlPost, JSON.stringify(Imagem), this.httpOptions)
+  // salva um ContentUser
+  saveContentUser(ContentUser: ContentUser): Observable<ContentUser> {
+    return this.httpClient.post<ContentUser>(this.url, JSON.stringify(ContentUser), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
 
-  // utualiza um Imagem
-  updateImagem(Imagem: Imagem): Observable<Imagem> {
-    return this.httpClient.put<Imagem>(this.urlPost + '/' + Imagem.id, JSON.stringify(Imagem), this.httpOptions)
+  // atualiza um ContentUser
+  updateContentUser(ContentUser: ContentUser): Observable<ContentUser> {
+    return this.httpClient.put<ContentUser>(this.url + '/' + ContentUser.id, JSON.stringify(ContentUser), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)
       )
   }
 
-  // deleta um Imagem
-  deleteImagem(Imagem: Imagem) {
-    return this.httpClient.delete<Imagem>(this.url + '/' + Imagem.id, this.httpOptions)
+  // deleta um ContentUser
+  deleteContentUser(ContentUser: ContentUser) {
+    return this.httpClient.delete<ContentUser>(this.url + '/' + ContentUser.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

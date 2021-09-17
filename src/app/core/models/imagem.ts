@@ -4,10 +4,10 @@ export class Imagem extends BaseResourceModel{
   constructor(
 
     public id?: number,
-    public filename?: string,
-    public mimetype?: string,
-    public file?: string,
-    public urlFile?: string
+    public name?: string,
+    public url?: string,
+    public type?: string,
+    public size?: number
 
   ){
     super();

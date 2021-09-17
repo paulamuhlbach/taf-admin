@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 import { MainContainerComponent } from './main-container.component';
 import { MainContainerRoutingModule} from './main-container.routing.module'
 
@@ -10,6 +10,7 @@ import { MainContainerRoutingModule} from './main-container.routing.module'
   ],
 
   imports: [
+    RouterModule,
     MainContainerRoutingModule
   ],
 

@@ -9,17 +9,23 @@ export const routes: Routes = [
 	},
 	{
 		path:'usuarios',
-		loadChildren: './modules/usuarios/usuarios.module#UsuariosModule'
+		loadChildren: './modules/usuarios/usuarios.module#UsuariosModule',
+    data: { breadcrumb: 'usuarios' }
 	},
 	{
 		path:'inicio',
-		loadChildren: './core/main-container/main-container.module#MainContainerModule'
+		loadChildren: './core/main-container/main-container.module#MainContainerModule',
+    data: { breadcrumb: 'inicio' }
 	}
 
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }) ],
-  exports: [ RouterModule ]
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule {}

@@ -7,7 +7,7 @@ import { BaseResourceService } from './base-resource.service';
 
 import { switchMap } from 'rxjs/operators';
 
-import { ToastrService } from 'ngx-toastr';
+import toastr from "toastr";
 
 @Injectable()
 export abstract class BaseResourseFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
@@ -18,7 +18,7 @@ export abstract class BaseResourseFormComponent<T extends BaseResourceModel> imp
   pageTitle: string;  // editar ou criar
   serverErrorMessages: string[] = null; // mensagens retornadas do servidor
   submittingForm: boolean = false; // para evitar várias submissões seguidas
-  toastr: ToastrService;
+
 
   protected route: ActivatedRoute;
   protected router: Router;
@@ -42,6 +42,8 @@ export abstract class BaseResourseFormComponent<T extends BaseResourceModel> imp
     this.setCurrentAction();
     this.buildResourceForm();
     this.loadResource();
+    console.log("currentAction ==> "+ this.setCurrentAction());
+    console.log("path ==> "+ this.route.snapshot.url[0].path);
   }
 
   ngAfterContentChecked(){
@@ -52,7 +54,7 @@ export abstract class BaseResourseFormComponent<T extends BaseResourceModel> imp
   submitForm(){
     this.submittingForm = true; // desbloqueia o botão para submissão do formulário
 
-    if(this.currentAction == "new"){
+    if(this.route.snapshot.url[0].path == "new"){
       this.createResource();
     }
     else{
@@ -129,7 +131,7 @@ export abstract class BaseResourseFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForSuccess(resource: T){
-    this.toastr.success("Solicitação processada com sucesso");
+    toastr.success("Solicitação processada com sucesso");
 
     const baseComponentPath: string = this.route.snapshot.parent.url[0].path;
 
@@ -142,7 +144,7 @@ export abstract class BaseResourseFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForError(error){
-    this.toastr.error("Ocorreu um erro ao processar a sua solicitação!")
+    toastr.error("Ocorreu um erro ao processar a sua solicitação!")
 
     //para não submeter o formulário
     this.submittingForm = false;

@@ -18,8 +18,8 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
        protected jsonDataToResourceFn: (jsonData: any)=>T
        ){
 
-       //this.apiURL == 'https://portal-taf.herokuapp.com/';
-       this.apiURL == 'http://localhost:5000/';
+       this.apiURL = 'https://portal-taf.herokuapp.com/api';
+       //this.apiURL == 'http://localhost:5000/';
        this.http = injector.get(HttpClient);
    }
 
@@ -35,7 +35,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
      }
 
      getById(id: number): Observable<T> {
-       const url = `${this.apiPath}/${id}`;
+       const url = `${this.apiURL}/${this.apiPath}/${id}`;
 
        return this.http.get(url).pipe(
            map(this.jsonDataToResource.bind(this)),
@@ -53,7 +53,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
      }
 
      update(resource: T): Observable<T> {
-       const url = `${this.apiPath}/${resource.id}`;
+       const url = `${this.apiURL}/${this.apiPath}/${resource.id}`;
        return this.http.put(url, resource).pipe(
            map(() => resource),
            catchError(this.handleError)
@@ -62,7 +62,7 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
      }
 
      delete(id:number): Observable<any> {
-       const url = `${this.apiPath}/${id}`;
+       const url = `${this.apiURL}/${this.apiPath}/${id}`;
        return this.http.delete(url).pipe(
            map(() => null),
            catchError(this.handleError),

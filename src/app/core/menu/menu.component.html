@@ -1,9 +1,6 @@
-<nav id="menu-principal">
-    <ul *ngFor="let menu of menus">
-      <li><a href="#">{{menu.name}}</a></li>
-      <li><a href="#">MENU</a></li>
-      <li><a href="#">MENU</a></li>
-      <li><a href="#">MENU</a></li>
-      <li><a href="#">MENU</a></li>
+<nav id="menu-principal" >
+    <ul >
+      <li *ngFor="let page of resources"><a href="#">{{page.title}}</a></li>
+
     </ul>
 </nav>

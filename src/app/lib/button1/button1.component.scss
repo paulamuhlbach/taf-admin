@@ -1,0 +1,162 @@
+.button1 {
+  height: 3.2rem;
+  padding: 0 6px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  line-height: 22px;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--large {
+    height: 4rem;
+    padding: 0 8px;
+    font-size: 16px;
+    line-height: 24px;
+
+    &.button1--icon-only {
+      width: 4rem;
+    }
+
+    .button1__icon {
+      height: 19px;
+      width: 19px;
+    }
+  }
+
+  &--small {
+    height: 2.4rem;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 20px;
+
+    &.button1--icon-only {
+      width: 2.4rem;
+    }
+
+    .button1__icon {
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  &--primary {
+    background-color: #138a83;
+
+    &:hover {
+      background-color: #269d96;
+    }
+
+    &:active {
+      background-color: #075e58;
+    }
+
+    &.button1--outline {
+      background-color: transparent;
+      color: #138a83;
+      border: 1px solid #138a83;
+    }
+
+    &.button1--disabled {
+      background-color: #e7f4f3;
+      color: #9fc6c3;
+      border: 1px solid #9fc6c3;
+      cursor: default;
+
+      &:hover {
+        background-color: #e7f4f3;
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: #434343;
+
+    &:hover {
+      background-color: #91a5af;
+    }
+
+    &:active {
+      background-color: #37474f;
+    }
+
+    &.button1--outline {
+      background-color: transparent;
+      color: #434343;
+      border: 1px solid #434343;
+    }
+
+    &.button1--disabled {
+      background-color: #e7f4f3;
+      color: #91a5af;
+      border: 1px solid #91a5af;
+      cursor: default;
+
+      &:hover {
+        background-color: #e7f4f3;
+      }
+    }
+  }
+
+  &--danger {
+    background-color: #c22424;
+
+    &:hover {
+      background-color: #e55151;
+    }
+
+    &:active {
+      background-color: #a30d0d;
+    }
+
+    &.button1--outline {
+      background-color: transparent;
+      color: #c22424;
+      border: 1px solid #c22424;
+    }
+
+    &.button1--disabled {
+      background-color: #ffdcdc;
+      color: #fca4a4;
+      border: 1px solid #fca4a4;
+      cursor: default;
+
+      &:hover {
+        background-color: #ffdcdc;
+      }
+    }
+  }
+
+  &__icon {
+    height: 16px;
+    width: 16px;
+
+    display: flex;
+    justify-content: center;
+
+    &--right {
+      margin-left: 5px;
+    }
+
+    &--left {
+      margin-right: 5px;
+    }
+  }
+
+  &--icon-only {
+    width: 3.2rem;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

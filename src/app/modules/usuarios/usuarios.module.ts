@@ -1,21 +1,42 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { UsuariosRoutingModule } from './usuarios.routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
-import { ListaPerfisUsuariosComponent } from './lista-perfis-usuarios/lista-perfis-usuarios.component';
 import { ListaRolesComponent } from './lista-roles/lista-roles.component';
+import { ImagemUsuariosComponent } from './imagem-usuarios/imagem-usuarios.component';
+import { CadastraUsuariosComponent } from './cadastra-usuarios/cadastra-usuarios.component';
 
 
 
 @NgModule({
+
   declarations: [
     ListaUsuariosComponent,
-    ListaPerfisUsuariosComponent,
-    ListaRolesComponent
+    ListaRolesComponent,
+    ImagemUsuariosComponent,
+    CadastraUsuariosComponent,
+
+
   ],
   imports: [
     CommonModule,
-    UsuariosRoutingModule
-  ]
+    RouterModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+
+    //BrowserAnimationsModule,
+   // NoopAnimationsModule,
+    UsuariosRoutingModule,
+    MatExpansionModule,
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
 })
 export class UsuariosModule { }
+

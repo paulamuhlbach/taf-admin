@@ -1,0 +1,42 @@
+ul {
+  & {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 3px dashed #f7eacc;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  li {
+    & {
+      display: inline;
+    }
+
+    &:before {
+      content: "/";
+      margin: 0 6px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      color: #801932;
+
+    }
+
+    &:first-child:before {
+      content: "";
+      margin: 0;
+
+    }
+
+  }
+
+  li a{
+    color: #801932;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+
+}

@@ -1,0 +1,68 @@
+<button
+    class="button1"
+    [type]="type"
+    [disabled]="disabled"
+    [class]="'button1--' + color"
+    [ngClass]="{
+        'button1--large': large,
+        'button1--small': small,
+        'button1--disabled': disabled,
+        'button1--outline': outline
+    }"
+    (click)="onClick()"
+    *ngIf="mode === 'text-only'"
+>
+    {{ content }}
+</button>
+
+<button
+    class="button1"
+    [type]="type"
+    [disabled]="disabled"
+    [class]="'button1--' + color"
+    [ngClass]="{
+        'button1--large': large,
+        'button1--small': small,
+        'button1--disabled': disabled,
+        'button1--outline': outline
+    }"
+    (click)="onClick()"
+    *ngIf="mode === 'icon-right'"
+>
+    {{ content }}
+
+</button>
+
+<button
+    class="button1"
+    [type]="type"
+    [disabled]="disabled"
+    [class]="'button1--' + color"
+    [ngClass]="{
+        'button1--large': large,
+        'button1--small': small,
+        'button1--disabled': disabled,
+        'button1--outline': outline
+    }"
+    (click)="onClick()"
+    *ngIf="mode === 'icon-left'"
+>
+    {{ content }}
+</button>
+
+<button
+    class="button1 button1--icon-only"
+    [type]="type"
+    [disabled]="disabled"
+    [class]="'button1--' + color"
+    [ngClass]="{
+        'button1--large': large,
+        'button1--small': small,
+        'button1--disabled': disabled,
+        'button1--outline': outline
+    }"
+    (click)="onClick()"
+    *ngIf="mode === 'icon-only'"
+>
+
+</button>

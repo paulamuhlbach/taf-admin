@@ -1,66 +1,44 @@
-import { Component, Input, OnInit, Inject } from '@angular/core';
-import { NgForm } from '@angular/forms';
-//import { ContentUserService } from '../../../core/services';
-//import { ContentUser } from '../../../core/models';
-import { ContentUserService } from '../../../core/services';
-import { ContentUser } from '../../../core/models';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BaseResourceListComponent } from '../../../core/base-resource'
+
+import { ContentUserService, ContentUserRoleService } from '../../../core/services';
+import { ContentUser, ContentUserRole } from '../../../core/models';
+
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-lista-usuarios',
   templateUrl: './lista-usuarios.component.html',
-  styleUrls: ['./lista-usuarios.component.css']
+  styleUrls: ['./lista-usuarios.component.css'],
 })
 
-export class ListaUsuariosComponent implements OnInit{
+export class ListaUsuariosComponent extends BaseResourceListComponent<ContentUser> implements OnInit{
 
-  contentUser = {} as ContentUser;
-  contentUsers: ContentUser[];
+  title: string = 'Cadastra usuarios';
+  panelOpenState = false;
+  quantidadeUsers: number = 0;
 
-  constructor(private contentUserService: ContentUserService) {}
+  contentUserRoles: Array<ContentUserRole>;
+  contentUsers: Array<ContentUser>;
 
-  ngOnInit() {
-    this.getContentUsers();
+  constructor(
+    private contentUserService: ContentUserService,
+    private contentUserRoleService: ContentUserRoleService) {
+
+    super(contentUserService)
+   }
+
+
+   ngOnInit() {
+    this.loadRoles();
+    super.ngOnInit();
   }
 
-  // defini se um contentUser será criado ou atualizado
-  saveContentUser(form: NgForm) {
-    if (this.contentUser.id !== undefined) {
-      this.contentUserService.updateContentUser(this.contentUser).subscribe(() => {
-        this.cleanForm(form);
-      });
-    } else {
-      this.contentUserService.saveContentUser(this.contentUser).subscribe(() => {
-        this.cleanForm(form);
-      });
-    }
-  }
-
-  // Chama o serviço para obtém todos os contentUsers
-  getContentUsers() {
-    this.contentUserService.getContentUsers().subscribe((contentUsers: ContentUser[]) => {
-      this.contentUsers = contentUsers;
-    });
-  }
-
-  // deleta um contentUser
-  deleteContentUser(contentUser: ContentUser) {
-    this.contentUserService.deleteContentUser(contentUser).subscribe(() => {
-      this.getContentUsers();
-    });
-  }
-
-  // copia o contentUser para ser editado.
-  editContentUser(contentUser: ContentUser) {
-    this.contentUser = { ...contentUser };
-  }
-
-  // limpa o formulario
-  cleanForm(form: NgForm) {
-    this.getContentUsers();
-    form.resetForm();
-    this.contentUser = {} as ContentUser;
+   protected loadRoles(){
+    this.contentUserRoleService.getAll().subscribe(
+      contentUserRoles => this.contentUserRoles = contentUserRoles
+    );
   }
 
 

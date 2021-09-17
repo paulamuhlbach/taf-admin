@@ -1,9 +1,13 @@
-<div *ngFor="let contentUser of contentUsers">
-  <p>{{contentUser.userProfile.primeiroNome}} {{contentUser.userProfile.sobrenome}}</p>
-  <p>{{contentUser.contentUserRole.description}} {{contentUser.contentUserRole.active}}</p>
+<app-breadcrumb
+    [itens]="[{text:'Usuários'}]"
+></app-breadcrumb>
+
+<div class="container_header_main">
+  <h1>{{ title }}</h1>
+  <button content="Button" [routerLink]="['new']">Cadastrar novo usuário</button>
 </div>
 
-<app-lista-perfis-usuarios></app-lista-perfis-usuarios>
+<span *ngFor="let contentUser of resources" >
+  <p>Teste: {{contentUser.id}}</p>
 
-<p>Roles de Usuário:</p>
-<app-lista-roles></app-lista-roles>
+</span>
