@@ -5,7 +5,7 @@ import { BaseResourceListComponent } from '../../../core/base-resource'
 import { ContentUserService, ContentUserRoleService } from '../../../core/services';
 import { ContentUser, ContentUserRole } from '../../../core/models';
 
-import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-lista-usuarios',

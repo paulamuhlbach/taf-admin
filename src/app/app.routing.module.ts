@@ -14,7 +14,7 @@ export const routes: Routes = [
 	},
 	{
 		path:'inicio',
-		loadChildren: './core/main-container/main-container.module#MainContainerModule',
+		loadChildren: './modules/main-container/main-container.module#MainContainerModule',
     data: { breadcrumb: 'inicio' }
 	}
 

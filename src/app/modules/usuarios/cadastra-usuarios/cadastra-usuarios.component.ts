@@ -6,7 +6,7 @@ import { ContentUserRoleService, ContentUserService, UserProfileService } from '
 import { ContentUserRole, ContentUser, UserProfile } from '../../../core/models';
 import { switchMap } from 'rxjs/operators';
 
-import { ToastrService } from 'ngx-toastr';
+
 
 
 @Component({

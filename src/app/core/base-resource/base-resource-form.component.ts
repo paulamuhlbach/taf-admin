@@ -7,7 +7,7 @@ import { BaseResourceService } from './base-resource.service';
 
 import { switchMap } from 'rxjs/operators';
 
-import toastr from "toastr";
+//import toastr from "toastr";
 
 @Injectable()
 export abstract class BaseResourseFormComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
@@ -131,7 +131,7 @@ export abstract class BaseResourseFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForSuccess(resource: T){
-    toastr.success("Solicitação processada com sucesso");
+    //toastr.success("Solicitação processada com sucesso");
 
     const baseComponentPath: string = this.route.snapshot.parent.url[0].path;
 
@@ -144,7 +144,7 @@ export abstract class BaseResourseFormComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForError(error){
-    toastr.error("Ocorreu um erro ao processar a sua solicitação!")
+   // toastr.error("Ocorreu um erro ao processar a sua solicitação!")
 
     //para não submeter o formulário
     this.submittingForm = false;

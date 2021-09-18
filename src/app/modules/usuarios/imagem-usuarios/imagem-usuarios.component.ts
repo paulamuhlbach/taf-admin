@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, Inject } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { ImagemService } from '../../../core/services';
 import { Imagem } from '../../../core/models';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-imagem-usuarios',

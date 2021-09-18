@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { UsuariosRoutingModule } from './usuarios.routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 
@@ -14,7 +14,6 @@ import { ImagemUsuariosComponent } from './imagem-usuarios/imagem-usuarios.compo
 import { CadastraUsuariosComponent } from './cadastra-usuarios/cadastra-usuarios.component';
 
 
-
 @NgModule({
 
   declarations: [
@@ -22,19 +21,15 @@ import { CadastraUsuariosComponent } from './cadastra-usuarios/cadastra-usuarios
     ListaRolesComponent,
     ImagemUsuariosComponent,
     CadastraUsuariosComponent,
-
-
   ],
   imports: [
     CommonModule,
+    //BrowserAnimationsModule,
     RouterModule,
     ReactiveFormsModule,
     HttpClientModule,
-
-    //BrowserAnimationsModule,
-   // NoopAnimationsModule,
     UsuariosRoutingModule,
-    MatExpansionModule,
+    MatExpansionModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
 })

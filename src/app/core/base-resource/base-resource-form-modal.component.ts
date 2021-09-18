@@ -2,7 +2,7 @@ import { OnInit, Inject, Injector, Injectable} from '@angular/core';
 import { BaseResourceModel } from './base-resource.model';
 import { BaseResourceService } from './base-resource.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+//import { ToastrService } from 'ngx-toastr';
 import { switchMap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
@@ -22,7 +22,7 @@ export abstract class BaseResourceFormModalComponent<T extends BaseResourceModel
   protected route: ActivatedRoute;
   protected router: Router;
   protected formBuilder: FormBuilder;
-  protected toastr: ToastrService;
+  //protected toastr: ToastrService;
 
   constructor(
     // injeção de dependências
@@ -84,7 +84,7 @@ export abstract class BaseResourceFormModalComponent<T extends BaseResourceModel
   }
 
   private actionsForError(error) {
-    this.toastr.error('Ocorreu um erro ao processar a sua solicitação!');
+    //this.toastr.error('Ocorreu um erro ao processar a sua solicitação!');
     this.submittingForm = false; // para não submeter o formulário
 
     if (error.status === 442) {

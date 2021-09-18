@@ -1,35 +1,24 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
 import { AppRoutingModule } from './app.routing.module';
-import { MainContainerModule } from './core/main-container/main-container.module';
+
+import { CoreModule } from './core/core.module';
 import { UsuariosModule } from './modules/usuarios/usuarios.module';
+import { MainContainerModule } from './modules/main-container/main-container.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './core/header/header.component';
-import { FooterComponent } from './core/footer/footer.component';
-import { MenuComponent } from './core/menu/menu.component';
-import { BreadCrumbComponent } from './core/breadcrumb/breadcrumb.component';
-import { FormFieldErrorComponent } from './core/form-field-error/form-field-error.component';
-import { ServerErrorMessagesComponent } from './core/server-error-messages/server-error-messages.component';
-
 
 @NgModule({
   declarations: [
-
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    MenuComponent,
-    BreadCrumbComponent,
-    FormFieldErrorComponent,
-    ServerErrorMessagesComponent
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     MainContainerModule,
-    UsuariosModule,
+    UsuariosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

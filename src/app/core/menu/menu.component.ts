@@ -4,7 +4,7 @@ import { BaseResourceListComponent } from '../../core/base-resource'
 import { MenuService, MenuGroupService, PageService } from '../services';
 import { Menu, MenuGroup, Page } from '../models';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+//import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-menu',

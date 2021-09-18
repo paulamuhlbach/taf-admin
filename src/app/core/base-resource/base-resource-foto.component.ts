@@ -7,7 +7,6 @@ import { BaseResourceService } from './base-resource.service';
 
 import { switchMap } from 'rxjs/operators';
 
-import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export abstract class BaseResourseFotoComponent<T extends BaseResourceModel> implements OnInit, AfterContentChecked {
@@ -18,7 +17,7 @@ export abstract class BaseResourseFotoComponent<T extends BaseResourceModel> imp
   pageTitle: string;  // editar ou criar
   serverErrorMessages: string[] = null; // mensagens retornadas do servidor
   submittingForm: boolean = false; // para evitar várias submissões seguidas
-  toastr: ToastrService;
+  //toastr: ToastrService;
   urlFoto: string;
 
   protected route: ActivatedRoute;
@@ -130,7 +129,7 @@ export abstract class BaseResourseFotoComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForSuccess(resource: T){
-    this.toastr.success("Solicitação processada com sucesso");
+    //this.toastr.success("Solicitação processada com sucesso");
 
     const baseComponentPath: string = this.route.snapshot.parent.url[0].path;
 
@@ -143,7 +142,7 @@ export abstract class BaseResourseFotoComponent<T extends BaseResourceModel> imp
   }
 
   protected actionsForError(error){
-    this.toastr.error("Ocorreu um erro ao processar a sua solicitação!")
+    //this.toastr.error("Ocorreu um erro ao processar a sua solicitação!")
 
     //para não submeter o formulário
     this.submittingForm = false;
