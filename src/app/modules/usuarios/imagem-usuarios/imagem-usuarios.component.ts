@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { ImagemService } from '../../../core/services';
+import { ImagemService } from '../../../core/services/imagem.service';
 import { Imagem } from '../../../core/models';
 
 @Component({

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BaseResourceListComponent } from '../../../core/base-resource'
 
-import { ContentUserService, ContentUserRoleService } from '../../../core/services';
+import { ContentUserService } from '../../../core/services/contentUser.service';
+import { ContentUserRoleService } from '../../../core/services/contentUserRole.service';
 import { ContentUser, ContentUserRole } from '../../../core/models';
 
 

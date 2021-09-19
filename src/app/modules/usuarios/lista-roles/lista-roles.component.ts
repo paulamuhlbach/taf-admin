@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BaseResourceListComponent } from '../../../core/base-resource'
 
-import { ContentUserRoleService } from '../../../core/services';
+import { ContentUserRoleService } from '../../../core/services/contentUserRole.service';
 import { ContentUserRole } from '../../../core/models';
 
 
@@ -23,6 +23,8 @@ export class ListaRolesComponent extends BaseResourceListComponent<ContentUserRo
 
     super(contentUserRoleService)
    }
+
+
 
 
 

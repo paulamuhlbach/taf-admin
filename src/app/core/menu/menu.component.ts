@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BaseResourceListComponent } from '../../core/base-resource'
-import { MenuService, MenuGroupService, PageService } from '../services';
+import { MenuService } from '../services/menu.service';
+import { MenuGroupService } from '../services/menuGroup.service';
+import { PageService } from '../services/page.service';
 import { Menu, MenuGroup, Page } from '../models';
 import { Router } from '@angular/router';
 //import { ToastrService } from 'ngx-toastr';

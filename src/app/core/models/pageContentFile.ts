@@ -10,7 +10,7 @@ export class PageContentFile extends BaseResourceModel{
     public mimetype?: string,
     public file?: string,
     public urlFile?: string,
-    public page?: PageContent
+    public pageContent?: PageContent
 
   ){
     super();

@@ -8,6 +8,58 @@
 </div>
 
 <span *ngFor="let contentUser of resources" >
-  <p>Teste: {{contentUser.id}}</p>
+
+
+<mat-accordion displayMode="default" [multi]="true"
+[hideToggle]="false">
+
+<mat-expansion-panel [hideToggle]="false">
+
+<mat-expansion-panel-header>
+
+
+<div class="mat-expansion-panel-title">{{contentUser.contentUserRole.description}} </div>
+
+</mat-expansion-panel-header>
+
+<div class="box-usuarios">
+
+<div *ngIf="!contentUser.userProfile.idUserImage">
+
+<div class="areaFoto">
+<a href="#">
+ <div class="circle">
+   <img src="https://portal-taf.herokuapp.com/api/userProfile/imagem/files/1"
+        alt="Foto"
+        title="Imagem fotográfica de {{contentUser.userProfile.primeiroNome}} {{contentUser.userProfile.sobrenome}}"
+        class="circleF">
+ </div>
+ <div class="nome-usuario">{{contentUser.userProfile.primeiroNome}} {{contentUser.userProfile.sobrenome}}</div>
+</a>
+</div>
+
+</div>
+<div *ngIf="contentUser.userProfile.idUserImage">
+
+<div class="areaFoto">
+<a href="#">
+ <div class="circle">
+   <img src="https://portal-taf.herokuapp.com/api/userProfile/imagem/files/{{contentUser.userProfile.idUserImage}}"
+        alt="Foto"
+        title="Imagem fotográfica de {{contentUser.userProfile.primeiroNome}} {{contentUser.userProfile.sobrenome}}"
+        class="circleF">
+ </div>
+
+ <div class="nome-usuario">{{contentUser.userProfile.primeiroNome}} {{contentUser.userProfile.sobrenome}}</div>
+</a>
+</div>
+
+</div>
+</div>
+
+
+</mat-expansion-panel>
+
+</mat-accordion>
 
 </span>

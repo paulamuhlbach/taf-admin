@@ -64,6 +64,7 @@ export class ImagemService {
       )
   }
 
+
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
