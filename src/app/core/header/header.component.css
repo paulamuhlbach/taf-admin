@@ -1,13 +1,16 @@
 #banner{
   background-color: #AD2344;
   height: 115px;
+
 }
 
 .container-banner{
   display: flex;
-  justify-content: space-around;
+  justify-content:space-between;
   margin-bottom: 10px;
   border-bottom: 3px dashed rgba(244, 210, 121, 0.1);
+  padding-left:10%;
+  padding-right:10%;
 }
 .logo{
   padding-top: 15px;

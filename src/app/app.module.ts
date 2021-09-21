@@ -22,7 +22,7 @@ import { AppComponent } from './app.component';
     CoreModule,
     MainContainerModule,
     UsuariosModule,
-    EnderecosModule
+    EnderecosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

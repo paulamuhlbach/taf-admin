@@ -1,6 +1,12 @@
-<nav id="menu-principal" >
-    <ul >
-      <li *ngFor="let page of resources"><a href="#">{{page.title}}</a></li>
 
-    </ul>
+<nav id="menu-principal" >
+  <ul>
+    <li *ngFor="let page of resources | sortBy:'asc':'ordem'">
+       <span *ngIf="page.menu.idMenuGroup === 2">
+        <ng-template #content>content here...</ng-template>
+         <a href="#">{{page.title}}</a>
+        </span>
+    </li>
+  </ul>
 </nav>
+

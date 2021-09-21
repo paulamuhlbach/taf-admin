@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Output, EventEmitter  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BaseResourceListComponent } from '../../core/base-resource'
+
 import { MenuService } from '../services/menu.service';
 import { MenuGroupService } from '../services/menuGroup.service';
 import { PageService } from '../services/page.service';
@@ -14,12 +15,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 
-export class MenuComponent extends BaseResourceListComponent<Menu> implements OnInit{
+export class MenuComponent extends BaseResourceListComponent<Page> implements OnInit{
+
+  @Output() public sidenavToggle = new EventEmitter();
 
   title: string = 'Menu Principal'
 
   menuGroups: Array<MenuGroup>;
-  pages: Array<Page>;
+  menus: Array<Menu>;
+  idMenuGroup: number = 2;
+  menuGroup: MenuGroup;
+  noContent: string;
 
   constructor(
     private menuService: MenuService,
@@ -31,22 +37,25 @@ export class MenuComponent extends BaseResourceListComponent<Menu> implements On
 
    ngOnInit() {
     this.loadMenuGroups();
+    this.loadMenus();
     super.ngOnInit();
   }
 
    protected loadMenuGroups(){
-    this.menuGroupService.getAll().subscribe(
-      menuGroups => this.menuGroups = menuGroups
+    this.menuGroupService.getById(this.idMenuGroup).subscribe(
+      menuGroup => this.menuGroup = menuGroup
     );
   }
 
-  protected loadPages(){
-    this.pageService.getAll().subscribe(
-      pages => this.pages = pages
+  protected loadMenus(){
+    this.menuService.getAll().subscribe(
+      menus => this.menus = menus
     );
   }
 
 
-
+  public onToggleSidenav = () => {
+    this.sidenavToggle.emit();
+  }
 
 }

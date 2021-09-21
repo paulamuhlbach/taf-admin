@@ -1,18 +1,32 @@
 #menu-principal ul {
   background-color:#801932;
   list-style:none;
-  display: inline-block;
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: flex-start;
+
+  flex-direction: row;
   width: 100%;
+  padding-left:10%;
+  padding-right:10%;
 
 }
 
 #menu-principal ul li {
-  display: inline;
+  display: flex;
+  width: 150px;  /* Or whatever */
+  margin-left:0;
+  text-align: left;
+}
+#menu-principal ul li:last-child {
+
+  margin-left: auto;
+  text-align: right;
 }
 
 #menu-principal ul li a {
-  margin-left: 5%;
-  padding-left: 5%;
+
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -27,3 +41,25 @@
   color: #FAE5B0;
 }
 
+#menu-principal li.has-submenu ul{
+  display:none;
+  position:absolute;
+ }
+ #menu-principal li.has-submenu ul li{
+  display:flex;
+  margin-top:.95rem;
+ }
+ #menu-principal li.has-submenu:hover ul{
+  display:block;
+  background:#eee;
+ }
+
+ #menu-principal li.has-submenu ul li a{
+  min-width:100px;
+ }
+ #menu-principal li.has-submenu ul li{
+  margin-bottom:-1px;
+ }
+ #menu-principal ul.menu li.has-menu{
+  top:0;
+ }

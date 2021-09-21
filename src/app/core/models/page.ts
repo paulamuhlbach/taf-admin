@@ -13,6 +13,7 @@ export class Page extends BaseResourceModel{
     public title?: string,
     public slug?: string,
     public url?: string,
+    public ordem?: number,
     public description?: string,
     public createdIn?: string,
     public lastModify?: string,
